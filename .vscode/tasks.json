@@ -9,8 +9,6 @@
             "command": "pdflatex",
             "args": [
                 "-output-directory=build",
-                "-interaction=nonstopmode",
-                "-file-line-error",
                 "main.tex"
             ],
             "group": {
