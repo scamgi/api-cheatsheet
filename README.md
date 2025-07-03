@@ -19,7 +19,7 @@ La cheatsheet è organizzata nelle seguenti sezioni principali:
 
 ## ⚙️ Come Compilare il PDF
 
-Per generare il file PDF della cheatsheet (`main.pdf`) e dell'analisi d'esame (`requisiti_esame.pdf`), è necessario avere una distribuzione LaTeX installata sul proprio sistema (es. MiKTeX, TeX Live, MacTeX).
+Per generare il file PDF della cheatsheet (`main.pdf`), è necessario avere una distribuzione LaTeX installata sul proprio sistema (es. MiKTeX, TeX Live, MacTeX).
 
 Una volta configurato l'ambiente, è possibile compilare il documento principale eseguendo il seguente comando dalla root del repository:
 
