@@ -1,0 +1,28 @@
+\subsection*{Notazioni Asintotiche}
+Descrivono il comportamento di una funzione al crescere dell'input $n$.
+\begin{itemize}
+    \item \textbf{Big O (Limite Superiore):} $f(n) = \bigO{g(n)}$ se esistono costanti $c > 0$ e $n_0 \geq 0$ tali che $0 \le f(n) \le c \cdot g(n)$ per ogni $n \ge n_0$. Rappresenta il caso peggiore.
+    \item \textbf{Big Omega (Limite Inferiore):} $f(n) = \bigOmega{g(n)}$ se esistono costanti $c > 0$ e $n_0 \geq 0$ tali che $0 \le c \cdot g(n) \le f(n)$ per ogni $n \ge n_0$. Rappresenta il caso migliore.
+    \item \textbf{Big Theta (Limite Stretto):} $f(n) = \bigTheta{g(n)}$ se $f(n) = \bigO{g(n)}$ e $f(n) = \bigOmega{g(n)}$. Indica che $g(n)$ è una stima precisa per $f(n)$.
+\end{itemize}
+
+\subsection*{Classi di Complessità Comuni}
+\begin{itemize}
+    \item $\bigO{1}$: Costante (es. accesso a un elemento di un array)
+    \item $\bigO{\log n}$: Logaritmica (es. ricerca binaria)
+    \item $\bigO{n}$: Lineare (es. scansione di una lista)
+    \item $\bigO{n \log n}$: Lineare-logaritmica (es. merge sort, heapsort)
+    \item $\bigO{n^2}$: Quadratica (es. bubble sort, selection sort)
+    \item $\bigO{2^n}$: Esponenziale (es. problemi risolti con la forza bruta)
+    \item $\bigO{n!}$: Fattoriale (es. problema del commesso viaggiatore con forza bruta)
+\end{itemize}
+
+\subsection*{Analisi di Algoritmi Ricorsivi}
+Per risolvere ricorrenze della forma $T(n) = aT(n/b) + f(n)$.
+\paragraph{Master Theorem:}
+Date le costanti $a \ge 1$, $b > 1$ e una funzione $f(n)$:
+\begin{enumerate}
+    \item Se $f(n) = \bigO{n^{\log_b a - \epsilon}}$ per qualche $\epsilon > 0$, allora $T(n) = \bigTheta{n^{\log_b a}}$.
+    \item Se $f(n) = \bigTheta{n^{\log_b a}}$, allora $T(n) = \bigTheta{n^{\log_b a} \log n}$.
+    \item Se $f(n) = \bigOmega{n^{\log_b a + \epsilon}}$ per qualche $\epsilon > 0$ e se $a f(n/b) \le c f(n)$ per qualche $c < 1$ e $n$ sufficientemente grande, allora $T(n) = \bigTheta{f(n)}$.
+\end{enumerate}

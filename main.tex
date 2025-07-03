@@ -1,0 +1,27 @@
+% Includi il preambolo con tutti i pacchetti e le impostazioni
+\input{preamble.tex}
+
+% Inizio del documento
+\begin{document}
+
+% Inizia l'ambiente a due colonne
+\begin{multicols}{2}
+
+% --- Sezione Complessità ---
+\section*{Complessità degli Algoritmi}
+\input{chapters/complessita.tex}
+
+\columnbreak % Interrompe la colonna e passa alla successiva (se necessario)
+
+% --- Sezione Strutture Dati ---
+\section*{Strutture Dati}
+\input{chapters/strutture_dati.tex}
+
+% Puoi aggiungere altre sezioni qui
+% \section*{Algoritmi di Ordinamento}
+% \input{chapters/ordinamento.tex}
+
+\end{multicols}
+% Fine dell'ambiente a due colonne
+
+\end{document}

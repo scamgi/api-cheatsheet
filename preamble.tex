@@ -1,0 +1,43 @@
+% --- Pacchetti e configurazioni di base ---
+\documentclass[10pt, a4paper]{article}
+
+% --- Lingua e codifica ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+% --- Matematica e simboli ---
+\usepackage{amsmath}         % Per ambienti matematici avanzati
+\usepackage{amssymb}         % Per simboli matematici
+\usepackage{amsfonts}        % Per i font matematici
+\usepackage{xfrac}           % Per frazioni "slanted" (es. 1/2)
+
+% --- Layout e stile ---
+\usepackage[a4paper, margin=1cm]{geometry} % Margini ridotti per un cheatsheet
+\usepackage{multicol}      % Per disporre il testo in più colonne
+\usepackage{graphicx}      % Per includere immagini
+\usepackage{parskip}       % Per avere spazio tra i paragrafi invece dell'indentazione
+\usepackage{xcolor}        % Per usare i colori
+
+% --- Intestazione e piè di pagina ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Pulisce tutte le intestazioni e i piè di pagina
+\fancyhead[C]{Cheatsheet di Algoritmi e Strutture Dati}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Link e riferimenti ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% --- Comandi personalizzati (utili per la matematica) ---
+\newcommand{\bigO}[1]{\mathcal{O}(#1)}
+\newcommand{\bigOmega}[1]{\Omega(#1)}
+\newcommand{\bigTheta}[1]{\Theta(#1)}
