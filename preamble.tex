@@ -13,12 +13,18 @@
 \usepackage{xfrac}           % Per frazioni "slanted" (es. 1/2)
 
 % --- Layout e stile ---
-\usepackage[a4paper, margin=1cm]{geometry} % Margini ridotti per un cheatsheet
+\usepackage[a4paper, margin=1.5cm]{geometry} % Aumentato leggermente il margine per sicurezza
 \usepackage{multicol}      % Per disporre il testo in più colonne
 \usepackage{graphicx}      % Per includere immagini
 \usepackage{parskip}       % Per avere spazio tra i paragrafi invece dell'indentazione
 \usepackage{xcolor}        % Per usare i colori
-\pagestyle{empty}          % Rimuove il pie di pagina
+\usepackage{fancyhdr}      % Pacchetto per gestire header/footer
+
+% --- Configurazione fancyhdr ---
+\pagestyle{fancy}          % Applica lo stile fancy a tutto il documento
+\fancyhf{}                 % Pulisce tutte le intestazioni e i piè di pagina
+\renewcommand{\headrulewidth}{0pt} % Rimuove la linea dell'intestazione
+\cfoot{\thepage}           % Imposta il numero di pagina al centro del footer (cfoot)
 
 % --- Link e riferimenti ---
 \usepackage{hyperref}
