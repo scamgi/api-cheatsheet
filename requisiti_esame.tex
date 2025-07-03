@@ -1,0 +1,101 @@
+\documentclass[a4paper, 11pt]{article}
+
+% --- PREAMBOLO ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{\textbf{Analisi degli Esami Passati: \\ Algoritmi e Strutture Dati}}
+\author{Richard Feynman (Simulato)}
+\date{\today}
+
+% --- INIZIO DOCUMENTO ---
+\begin{document}
+
+\maketitle
+
+Ah, un'ottima strategia! Per vincere una sfida, devi prima capirla. Guardare i vecchi esami è come essere un fisico che studia i risultati di esperimenti passati. Non stai solo memorizzando le risposte; stai cercando gli schemi, i principi profondi che le domande cercano di sondare. Si tratta di capire il \textit{carattere} del problema.
+
+Ho dato un'occhiata approfondita a questa seconda parte dei tuoi esami, la sezione ``Algoritmi e strutture dati''. Riguarda interamente i meccanismi del calcolo. Non solo le idee astratte, ma i veri e propri bulloni di come costruiresti una macchina pensante, come organizzeresti le informazioni e come ne misureresti l'efficienza. Alcune idee spuntano fuori più e più volte, come temi ricorrenti in una grande storia. Se vuoi sapere su cosa scommettere, ecco cosa ho scoperto.
+
+Basandomi sulla mia analisi di questi temi d'esame passati, gli argomenti che compaiono con la regolarità più sorprendente sono:
+
+\section*{1. Il Racconto di Due Macchine: Turing vs. RAM}
+
+Questo è il pezzo grosso. È presente in quasi ogni singolo esame. Ne sono ossessionati! Gli esaminatori vogliono vedere che hai capito la differenza tra due modelli fondamentali di calcolo:
+
+\begin{itemize}
+    \item \textbf{La Macchina di Turing (TM):} Pensa a questa come a un robot semplice e metodico con un lungo nastro di carta. Può solo leggere un simbolo alla volta, scriverne uno nuovo e spostare il nastro a sinistra o a destra~\cite{esame_07_09_23_tm_single, esame_10_02_23, esame_10_01_23_tm_single}. È il modello più basilare, il fondamento. Ti chiedono di progettare queste macchine, sia con un singolo nastro sia a volte con nastri multipli (il che semplifica la vita)~\cite{esame_30_01_25_tm_multi, esame_07_07_23_tm_multi}, per compiti specifici come riconoscere un linguaggio o tradurre una stringa. La chiave qui è il processo meccanico, passo dopo passo, e la sua complessità, che è spesso frustrantemente lenta, come rimanere impantanati in un tempo quadratico ($O(n^2)$)~\cite{esame_30_01_25_complexity, esame_07_07_23_complexity}.
+    
+    \item \textbf{La Macchina RAM:} Questa assomiglia di più a un computer moderno. Ha celle di memoria a cui puoi saltare direttamente. Niente più avanzamenti lenti su un nastro! Puoi prelevare dati da qualsiasi posizione in tempo costante. Ti chiederanno di risolvere lo \textit{stesso} problema con una macchina RAM~\cite{esame_30_01_25_ram, esame_12_02_24_ram, esame_04_09_24_ram} per vedere se apprezzi la potenza e la velocità che guadagni.
+\end{itemize}
+
+\subsection*{L'idea centrale}
+Vogliono che tu confronti e contrapponga. Che tu veda un problema e dica: ``Con un semplice nastro, questa è una seccatura... dovrò scorrere avanti e indietro, perdendo un sacco di tempo. Ma con l'accesso casuale, posso semplicemente memorizzare i miei contatori in un paio di celle e farlo in un lampo!'' Si tratta di capire i compromessi tra diverse architetture di macchine.
+
+\section*{2. L'Arte dell'Organizzazione: Le Strutture Dati}
+
+Hai una montagna di dati. Come la sistemi in modo da poter trovare le cose rapidamente? Questo è l'intero gioco delle strutture dati. Le domande non sono solo ``Cos'è una tabella hash?''. Sono ``Ecco un problema. Inventa un sistema per risolverlo in modo efficiente''.
+
+I personaggi più popolari in questa commedia sono:
+\begin{itemize}
+    \item \textbf{Alberi, Alberi, Alberi:} Specialmente gli Alberi Binari di Ricerca (BST)~\cite{esame_15_01_25_bst} e i loro cugini più sofisticati e autobilancianti come gli Alberi Rosso-Neri~\cite{esame_12_02_24_rbtree}. Amano chiederti di eseguire operazioni su di essi: inserire, cancellare~\cite{esame_15_01_25_bst_ops}, invertire~\cite{esame_19_06_23_invert}, o anche procedure ricorsive personalizzate come rimuovere tutte le foglie~\cite{esame_19_06_23_leaves}. Un albero è un modo meraviglioso per imporre un ordine al caos.
+    
+    \item \textbf{Tabelle Hash:} Quando hai bisogno di qualcosa di veloce — intendo, veramente veloce, come un tempo costante in media — ti affidi a una tabella hash. Sono una soluzione ricorrente per problemi che richiedono ricerche, inserimenti o cancellazioni rapide, come contare le occorrenze di un elemento~\cite{esame_20_06_24_hash} o collegare il codice fiscale di una persona ai suoi dati~\cite{esame_12_02_24_composite}.
+    
+    \item \textbf{Strutture Composte:} È qui che il gioco si fa divertente. Ti daranno una serie complessa di requisiti, come ``cerca per data in tempo logaritmico, ma cerca per codice fiscale in tempo costante''~\cite{esame_12_02_24_composite_req}. Il trucco è capire che nessuna singola struttura basterà. Devi essere un ingegnere intelligente e combinarle! Ad esempio, potresti usare un albero ordinato per data, in cui ogni nodo ha anche un puntatore che è memorizzato in una tabella hash indicizzata per codice fiscale~\cite{esame_12_02_24_composite}. Si tratta di costruire una macchina migliore partendo da parti più semplici.
+\end{itemize}
+
+\section*{3. Lo Strumento Universale: Algoritmi su Array}
+
+Molti problemi si riducono a una lista di numeri in un array. Queste domande testano la tua capacità di pensare in modo algoritmico. Una soluzione ingenua potrebbe essere quella di confrontare ogni elemento con ogni altro, ma è lenta e inelegante ($O(n^2)$). Lo schema qui è quasi sempre lo stesso:
+\begin{enumerate}
+    \item \textbf{Ordinalo!} Ordinando prima l'array, ne riveli la struttura. Questo costa quasi sempre $O(n \log n)$~\cite{esame_07_09_23_sort, esame_04_09_24_sort}.
+    
+    \item \textbf{Poi, scandiscilo in modo intelligente.} Dopo l'ordinamento, di solito puoi risolvere il problema con una singola passata lineare attraverso i dati, che costa solo $O(n)$~\cite{esame_04_09_24_scan}.
+\end{enumerate}
+Vedi questo schema per trovare la coppia di numeri più vicina tra due array~\cite{esame_04_09_24_scan}, trovare la coppia di numeri identici più distanti~\cite{esame_07_09_23_pair}, o per il problema ``MAXPITAGORA''~\cite{esame_10_01_23_maxpitagora}. Il principio è semplice: investire un po' di tempo all'inizio per organizzare i dati può portare a enormi risparmi in seguito.
+
+\section*{4. Quanto Velocemente Può Crescere? Le Equazioni di Ricorrenza}
+
+Questa è una questione più matematica, ma compare abbastanza spesso da essere importante~\cite{esame_19_06_23_recurrence, esame_20_06_24_recurrence}. Ti daranno una formula ricorsiva, che descrive come il tempo di esecuzione di un algoritmo dipende dal tempo di esecuzione per input più piccoli, e tu devi capire la complessità generale. Lo strumento chiave qui è il \textbf{Teorema Master}, una potente scorciatoia per risolvere un'intera classe di questi problemi~\cite{esame_19_06_23_master, esame_20_06_24_master}. È come avere una tavola degli integrali per risolvere le equazioni: se conosci gli schemi, puoi semplicemente scrivere la risposta.
+
+\vspace{1cm}
+
+Quindi, amico mio, non studiare solo una raccolta casuale di nozioni. Concentrati su questi principi fondamentali. Cerca di capire il \textit{perché}. Perché una macchina RAM è più veloce? Perché ordinare aiuta? Perché dovresti combinare un albero e una tabella hash? Se riesci a spiegare queste cose a te stesso, in modo semplice e chiaro, come se le stessi spiegando a uno studente curioso, allora non solo supererai l'esame, ma capirai la materia. E questa è l'unica cosa che abbia mai avuto un valore.
+
+% --- BIBLIOGRAFIA DI ESEMPIO ---
+\begin{thebibliography}{99}
+    \bibitem{esame_07_09_23_tm_single} Esame del 7 Settembre 2023, Esercizio 3.
+    \bibitem{esame_10_02_23} Esame del 10 Febbraio 2023, Esercizio 3.
+    \bibitem{esame_10_01_23_tm_single} Esame del 10 Gennaio 2023, Esercizio 3.
+    \bibitem{esame_30_01_25_tm_multi} Esame del 30 Gennaio 2025, Esercizio 4.
+    \bibitem{esame_07_07_23_tm_multi} Esame del 7 Luglio 2023, Esercizio 3.
+    \bibitem{esame_30_01_25_complexity} Esame del 30 Gennaio 2025, Esercizio 3.
+    \bibitem{esame_07_07_23_complexity} Esame del 7 Luglio 2023, Esercizio 3.
+    \bibitem{esame_30_01_25_ram} Esame del 30 Gennaio 2025, Esercizio 4.
+    \bibitem{esame_12_02_24_ram} Esame del 12 Febbraio 2024, Esercizio 3.
+    \bibitem{esame_04_09_24_ram} Esame del 4 Settembre 2024, Esercizio 3.
+    \bibitem{esame_15_01_25_bst} Esame del 15 Gennaio 2025, Esercizio 3.
+    \bibitem{esame_12_02_24_rbtree} Esame del 12 Febbraio 2024, Esercizio 4.
+    \bibitem{esame_15_01_25_bst_ops} Esame del 15 Gennaio 2025, Esercizio 3.
+    \bibitem{esame_19_06_23_invert} Esame del 19 Giugno 2023, Esercizio 4.
+    \bibitem{esame_19_06_23_leaves} Esame del 19 Giugno 2023, Esercizio 4.
+    \bibitem{esame_20_06_24_hash} Esame del 20 Giugno 2024, Esercizio 4.
+    \bibitem{esame_12_02_24_composite} Esame del 12 Febbraio 2024, Esercizio 4.
+    \bibitem{esame_12_02_24_composite_req} Esame del 12 Febbraio 2024, Esercizio 4.
+    \bibitem{esame_07_09_23_sort} Esame del 7 Settembre 2023, Esercizio 4.
+    \bibitem{esame_04_09_24_sort} Esame del 4 Settembre 2024, Esercizio 3.
+    \bibitem{esame_04_09_24_scan} Esame del 4 Settembre 2024, Esercizio 4.
+    \bibitem{esame_07_09_23_pair} Esame del 7 Settembre 2023, Esercizio 4.
+    \bibitem{esame_10_01_23_maxpitagora} Esame del 10 Gennaio 2023, Esercizio 4.
+    \bibitem{esame_19_06_23_recurrence} Esame del 19 Giugno 2023, Esercizio 3.
+    \bibitem{esame_20_06_24_recurrence} Esame del 20 Giugno 2024, Esercizio 3.
+    \bibitem{esame_19_06_23_master} Esame del 19 Giugno 2023, Esercizio 3.
+    \bibitem{esame_20_06_24_master} Esame del 20 Giugno 2024, Esercizio 3.
+\end{thebibliography}
+
+\end{document}
