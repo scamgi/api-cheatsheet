@@ -1,0 +1,38 @@
+\subsection{Vettori (Array)}
+\begin{itemize}
+    \item Un array \textit{A} è una sequenza di elementi.
+    \item \texttt{A.length} = lunghezza dell'array.
+    \item L'accesso a un elemento avviene tramite indice: $A[j]$, con $j \in \{1, \dots, A.\texttt{length}\}$.
+    \item Un sottoarray si indica con $A[i..j]$.
+    \item La \textbf{dimensione dell'input} per un array $A$ è definita come $n := A.\texttt{length}$.
+\end{itemize}
+
+\subsection{Matrici}
+\begin{itemize}
+    \item Una matrice \textit{M} è una griglia di elementi.
+    \item \texttt{M.height} = numero di righe.
+    \item \texttt{M.width} = numero di colonne.
+    \item \texttt{M[i][j]} = accesso a riga i colonna j.
+    \item La \textbf{dimensione dell'input} per una matrice $M$ è il numero totale di elementi, ovvero $M.\texttt{height} \times M.\texttt{width}$.
+    \item Per una matrice quadrata, la dimensione può anche essere indicata con $n := M.\texttt{size}$, dove \texttt{size} è il numero di righe (o colonne).
+\end{itemize}
+
+\subsection{Liste Concatenate}
+\begin{itemize}
+    \item \texttt{L.head} = puntatore alla testa della lista.
+    \item \texttt{x\_f.next = NIL}, dove \texttt{x\_f} è l'ultimo elemento della lista.
+\end{itemize}
+
+\subsubsection{Liste Singolarmente Concatenate}
+\begin{itemize}
+    \item \texttt{x.key} = dato contenuto nell'elemento $x$.
+    \item \texttt{x.next} = puntatore all'elemento successivo.
+\end{itemize}
+
+\subsubsection{Liste Doppiamente Concatenate}
+\begin{itemize}
+    \item \texttt{x.key} = dato contenuto nell'elemento $x$.
+    \item \texttt{x.next} = puntatore all'elemento successivo.
+    \item \texttt{x.prev} = puntatore all'elemento precedente.
+    \item \texttt{L.head.prev = NIL}
+\end{itemize}
