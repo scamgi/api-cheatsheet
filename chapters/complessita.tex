@@ -16,15 +16,42 @@ Dato il limite $L = \lim_{n\to\infty} \frac{f(n)}{g(n)}$:
 
 \subsection*{Gerarchia Fondamentale degli Ordini di Grandezza}
 Per costanti $k,h \in \mathbb{R}^+$ e $a>1$:
-$$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!) < \Theta(n^{n})$$
+$$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!) < \Theta(n^{n}) $$
+
+\subsection*{Complessità degli Automi}
+\begin{itemize}
+    \item \textbf{DFSA (Automa a Stati Finiti Deterministico)}
+    \begin{itemize}
+        \item Complessità Temporale: $T_A(n) = \Theta(n)$
+        \item Complessità Spaziale: $S_A(n) = \Theta(1)$
+    \end{itemize}
+
+    \item \textbf{DPDA (Automa a Pila Deterministico)}
+    \begin{itemize}
+        \item Complessità Temporale: $T_A(n) = \Theta(n)$
+        \item Complessità Spaziale: $\Theta(0) \le \Theta(S_A(n)) \le \Theta(n)$
+    \end{itemize}
+
+    \item \textbf{k-DTM (Macchina di Turing Deterministica a k-nastri)}
+    \begin{itemize}
+        \item Complessità Temporale: Nessun limite generale.
+        \item Complessità Spaziale: $\Theta(S_M(n)) \le \Theta(T_M(n))$
+    \end{itemize}
+
+    \item \textbf{SDTM (Macchina di Turing Deterministica a nastro singolo)}
+    \begin{itemize}
+        \item Complessità Temporale: Nessun limite generale.
+        \item Complessità Spaziale: $S_M(n) = \Omega(n)$
+    \end{itemize}
+\end{itemize}
 
 \subsection*{Classi di Complessità Comuni}
 \begin{itemize}
-    \item $\bigO{1}$: Costante (es. accesso a un elemento di un array)
-    \item $\bigO{\log n}$: Logaritmica (es. ricerca binaria)
-    \item $\bigO{n}$: Lineare (es. scansione di una lista)
-    \item $\bigO{n \log n}$: Lineare-logaritmica (es. merge sort, heapsort)
-    \item $\bigO{n^2}$: Quadratica (es. bubble sort, selection sort)
-    \item $\bigO{2^n}$: Esponenziale (es. problemi risolti con la forza bruta)
-    \item $\bigO{n!}$: Fattoriale (es. problema del commesso viaggiatore con forza bruta)
+    \item $\mathcal{O}(1)$: Costante (es. accesso a un elemento di un array)
+    \item $\mathcal{O}(\log n)$: Logaritmica (es. ricerca binaria)
+    \item $\mathcal{O}(n)$: Lineare (es. scansione di una lista)
+    \item $\mathcal{O}(n \log n)$: Lineare-logaritmica (es. merge sort, heapsort)
+    \item $\mathcal{O}(n^2)$: Quadratica (es. bubble sort, selection sort)
+    \item $\mathcal{O}(2^n)$: Esponenziale (es. problemi risolti con la forza bruta)
+    \item $\mathcal{O}(n!)$: Fattoriale (es. problema del commesso viaggiatore con forza bruta)
 \end{itemize}
