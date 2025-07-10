@@ -32,5 +32,15 @@
     \item \texttt{x.key} = dato contenuto nell'elemento $x$.
     \item \texttt{x.next} = puntatore all'elemento successivo.
     \item \texttt{x.prev} = puntatore all'elemento precedente.
-    \item \texttt{L.head.prev = NIL}
+    \item \texttt{L.head.prev = NIL}.
+\end{itemize}
+
+\subsubsection{Liste Doppiamente Concatenate Circolari}
+\begin{itemize}
+    \item Utilizzano un nodo speciale detto \textbf{sentinella} (\texttt{L.nil}) al posto di \texttt{L.head}.
+    \item \texttt{L.nil.key = NIL}.
+    \item \texttt{L.nil.next} punta alla testa della lista.
+    \item \texttt{L.nil.prev} punta alla coda della lista.
+    \item La lista è "circolare": la \texttt{prev} della testa e la \texttt{next} della coda puntano a \texttt{L.nil}.
+    \item Se la lista è vuota, \texttt{L.nil} punta a se stesso.
 \end{itemize}
