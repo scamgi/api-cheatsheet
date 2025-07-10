@@ -18,65 +18,6 @@ Dato il limite $L = \lim_{n\to\infty} \frac{f(n)}{g(n)}$:
 Per costanti $k,h \in \mathbb{R}^+$ e $a>1$:
 $$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!) < \Theta(n^{n}) $$
 
-\subsection{Complessità degli Automi}
-\begin{itemize}
-    \item \textbf{DFSA (Automa a Stati Finiti Deterministico)}
-    \begin{itemize}
-        \item Complessità Temporale: $T_A(n) = \Theta(n)$
-        \item Complessità Spaziale: $S_A(n) = \Theta(1)$
-    \end{itemize}
-
-    \item \textbf{DPDA (Automa a Pila Deterministico)}
-    \begin{itemize}
-        \item Complessità Temporale: $T_A(n) = \Theta(n)$
-        \item Complessità Spaziale: $\Theta(0) \le \Theta(S_A(n)) \le \Theta(n)$
-    \end{itemize}
-
-    \item \textbf{k-DTM (Macchina di Turing Deterministica a k-nastri)}
-    \begin{itemize}
-        \item Complessità Temporale: Nessun limite generale.
-        \item Complessità Spaziale: $\Theta(S_M(n)) \le \Theta(T_M(n))$
-    \end{itemize}
-
-    \item \textbf{SDTM (Macchina di Turing Deterministica a nastro singolo)}
-    \begin{itemize}
-        \item Complessità Temporale: Nessun limite generale.
-        \item Complessità Spaziale: $S_M(n) = \Omega(n)$
-    \end{itemize}
-\end{itemize}
-
-\subsection{Complessità delle RAM}
-
-\subsubsection{Criteri di Costo}
-\begin{itemize}
-    \item \textbf{Costo Costante:} Ogni istruzione ha costo 1. Ogni cella di memoria ha costo 1, indipendentemente dal valore contenuto.
-    \item \textbf{Costo Logaritmico:} Il costo di un'operazione e dello spazio occupato dipende dalla dimensione (logaritmo) dei valori numerici coinvolti.
-    $$
-    l(x) := 
-    \begin{cases}
-        \lfloor \log_2 x \rfloor + 1 & \text{se } x \neq 0 \\
-        1 & \text{se } x = 0
-    \end{cases}
-    \quad \text{N.B.: } l(x) = \Theta(\log x)
-    $$
-    \item \textbf{Quando sceglierli:} I due criteri sono equivalenti se la dimensione degli operandi è limitata da una costante. Se i numeri possono diventare arbitrariamente grandi, il criterio logaritmico è più realistico.
-\end{itemize}
-
-\subsubsection{Calcolo del Costo Logaritmico (caso semplificato)}
-Sotto l'ipotesi di usare un numero costante di celle di memoria:
-\begin{itemize}
-    \item \textbf{Costo Spaziale:} Lo spazio totale è la somma della "lunghezza" (logaritmo) di tutti i numeri più grandi salvati in ogni cella di memoria utilizzata.
-    \item \textbf{Gestione di un intero i} (es. \texttt{LOAD, STORE, READ, WRITE, JZ})
-    \begin{itemize}
-        \item Costo Temporale: $\Theta(\log i)$
-    \end{itemize}
-    \item \textbf{Operazioni Aritmetiche} (su operandi $n_1, n_2$)
-    \begin{itemize}
-        \item Addizione (+), Sottrazione (-): $\Theta(\log n_1 + \log n_2)$
-        \item Moltiplicazione (*), Divisione (/): $\Theta(\log n_1 \cdot \log n_2)$
-    \end{itemize}
-\end{itemize}
-
 \subsection{Classi di Complessità Comuni}
 \begin{itemize}
     \item $\mathcal{O}(1)$: Costante (es. accesso a un elemento di un array)

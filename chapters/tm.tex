@@ -1,0 +1,27 @@
+\subsection{Complessità degli Automi}
+\begin{itemize}
+    \item \textbf{DFSA (Automa a Stati Finiti Deterministico)}
+    \begin{itemize}
+        \item Complessità Temporale: $T_A(n) = \Theta(n)$
+        \item Complessità Spaziale: $S_A(n) = \Theta(1)$
+    \end{itemize}
+
+    \item \textbf{DPDA (Automa a Pila Deterministico)}
+    \begin{itemize}
+        \item Complessità Temporale: $T_A(n) = \Theta(n)$
+        \item Complessità Spaziale: $\Theta(0) \le \Theta(S_A(n)) \le \Theta(n)$
+    \end{itemize}
+
+    \item \textbf{k-DTM (Macchina di Turing Deterministica a k-nastri)}
+    \begin{itemize}
+        \item Complessità Temporale: Nessun limite generale.
+        \item Complessità Spaziale: $\Theta(S_M(n)) \le \Theta(T_M(n))$
+    \end{itemize}
+
+    \item \textbf{SDTM (Macchina di Turing Deterministica a nastro singolo)}
+    \begin{itemize}
+        \item Complessità Temporale: Nessun limite generale.
+        \item Complessità Spaziale: $S_M(n) = \Omega(n)$
+    \end{itemize}
+\end{itemize}
+
