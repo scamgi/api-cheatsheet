@@ -6,6 +6,18 @@
     \item $f(n) = \Theta(g(n))$ - \textbf{Theta grande} - Limite asintotico sia superiore che inferiore
 \end{itemize}
 
+\subsection*{Confronto Tramite Limiti}
+Dato il limite $L = \lim_{n\to\infty} \frac{f(n)}{g(n)}$:
+\begin{itemize}
+    \item Se $L = 0$, allora $\Theta(f(n)) < \Theta(g(n))$.
+    \item Se $L = c$ (con $c \neq 0, \infty$), allora $\Theta(f(n)) = \Theta(g(n))$.
+    \item Se $L = \infty$, allora $\Theta(f(n)) > \Theta(g(n))$.
+\end{itemize}
+
+\subsection*{Gerarchia Fondamentale degli Ordini di Grandezza}
+Per costanti $k,h \in \mathbb{R}^+$ e $a>1$:
+$$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!) < \Theta(n^{n})$$
+
 \subsection*{Classi di Complessità Comuni}
 \begin{itemize}
     \item $\bigO{1}$: Costante (es. accesso a un elemento di un array)
