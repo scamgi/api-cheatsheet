@@ -17,6 +17,12 @@ Consiste nel formulare un'ipotesi per la soluzione e nel verificarla rigorosamen
 
 \subsubsection{Metodo dell'Albero di Ricorsione}
 È una tecnica visuale per sviluppare le chiamate ricorsive e sommarne i costi livello per livello. È utile per formulare un'ipotesi di soluzione, da verificare poi con il metodo di sostituzione. Esempio di albero:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/albero_delle_ricorrenze.png}
+    \caption{Esempio di un albero di ricorsione.}
+    \label{fig:albero_ricorrenze}
+\end{figure}
 
 \subsubsection{Metodo per Ricorrenze Lineari}
 Si applica a ricorrenze della forma $T(n) = \sum_{i=1}^{h} a_i T(n-i) + cn^k$. Posto $a := \sum a_i$, la soluzione (come limite superiore) è:
