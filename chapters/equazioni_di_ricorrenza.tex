@@ -38,3 +38,11 @@ Fornisce una soluzione "pronta" per ricorrenze della forma $T(n) = a \cdot T(n/b
     \item \textbf{Caso 2:} Se $f(n) = \Theta(n^{\log_b a})$, allora $T(n) = \Theta(n^{\log_b a} \log n)$.
     \item \textbf{Caso 3:} Se $f(n) = \Omega(n^{\log_b a + \epsilon})$ per qualche $\epsilon > 0$ e se $f(n)$ soddisfa una condizione di regolarità, allora $T(n) = \Theta(f(n))$.
 \end{itemize}
+
+\subsubsection*{Corollario del Teorema Master (Caso Polinomiale)}
+Una versione semplificata del teorema si applica quando $f(n)$ è un polinomio della forma $\Theta(n^k)$. Data la ricorrenza $T(n) = a \cdot T(n/b) + \Theta(n^k)$:
+\begin{itemize}
+    \item \textbf{Caso 1:} Se $k < \log_b a$, allora $T(n) = \Theta(n^{\log_b a})$.
+    \item \textbf{Caso 2:} Se $k = \log_b a$, allora $T(n) = \Theta(n^k \log n)$.
+    \item \textbf{Caso 3:} Se $k > \log_b a$, allora $T(n) = \Theta(n^k)$.
+\end{itemize}
