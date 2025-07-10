@@ -51,12 +51,21 @@ $$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!)
 \begin{itemize}
     \item \textbf{Costo Costante:} Ogni istruzione ha costo 1. Ogni cella di memoria ha costo 1, indipendentemente dal valore contenuto.
     \item \textbf{Costo Logaritmico:} Il costo di un'operazione e dello spazio occupato dipende dalla dimensione (logaritmo) dei valori numerici coinvolti.
+    $$
+    l(x) := 
+    \begin{cases}
+        \lfloor \log_2 x \rfloor + 1 & \text{se } x \neq 0 \\
+        1 & \text{se } x = 0
+    \end{cases}
+    \quad \text{N.B.: } l(x) = \Theta(\log x)
+    $$
     \item \textbf{Quando sceglierli:} I due criteri sono equivalenti se la dimensione degli operandi è limitata da una costante. Se i numeri possono diventare arbitrariamente grandi, il criterio logaritmico è più realistico.
 \end{itemize}
 
 \subsubsection*{Calcolo del Costo Logaritmico (caso semplificato)}
 Sotto l'ipotesi di usare un numero costante di celle di memoria:
 \begin{itemize}
+    \item \textbf{Costo Spaziale:} Lo spazio totale è la somma della "lunghezza" (logaritmo) di tutti i numeri più grandi salvati in ogni cella di memoria utilizzata.
     \item \textbf{Gestione di un intero i} (es. \texttt{LOAD, STORE, READ, WRITE, JZ})
     \begin{itemize}
         \item Costo Temporale: $\Theta(\log i)$
