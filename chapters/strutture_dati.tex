@@ -77,4 +77,10 @@
     \item \texttt{x.rb} = puntatore al fratello a destra (right brother).
 \end{itemize}
 
-\end{document}
+\subsubsection{Alberi Rosso-Neri (RBT)}
+\begin{itemize}
+    \item Un RBT è un BST con attributi e proprietà aggiuntive.
+    \item \texttt{T.nil} = nodo speciale \textbf{sentinella} che sostituisce i puntatori a \texttt{NIL}. Il suo colore è sempre \texttt{BLACK}.
+    \item \texttt{x.color} = attributo di ogni nodo che può essere \texttt{RED} o \texttt{BLACK}.
+    \item \texttt{bh(x)} = \textbf{altezza nera} del nodo, ovvero il numero di nodi neri in ogni cammino da \texttt{x} (escluso) a \texttt{T.nil} (incluso).
+\end{itemize}
