@@ -84,3 +84,12 @@
     \item \texttt{x.color} = attributo di ogni nodo che può essere \texttt{RED} o \texttt{BLACK}.
     \item \texttt{bh(x)} = \textbf{altezza nera} del nodo, ovvero il numero di nodi neri in ogni cammino da \texttt{x} (escluso) a \texttt{T.nil} (incluso).
 \end{itemize}
+
+\paragraph{Proprietà RB}
+\begin{itemize}
+    \item Ogni nodo è \textbf{rosso o nero}.
+    \item La \textbf{radice è nera} (\texttt{T.root.color = BLACK}).
+    \item Ogni foglia (il nodo sentinella \texttt{T.nil}) è \textbf{nera}.
+    \item Se un nodo è rosso, allora entrambi i suoi \textbf{figli sono neri}.
+    \item Per ogni nodo, tutti i cammini semplici da quel nodo alle foglie discendenti contengono lo \textbf{stesso numero di nodi neri}.
+\end{itemize}
