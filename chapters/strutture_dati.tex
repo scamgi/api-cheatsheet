@@ -51,3 +51,30 @@
     \item \texttt{h(k)} = funzione hash che mappa una chiave \texttt{k} a un indice della tabella.
     \item \texttt{$\alpha=n/m$} = fattore di carico, definito come rapporto tra elementi e slot.
 \end{itemize}
+
+\subsection{Alberi}
+
+\subsubsection{Alberi Binari di Ricerca (BST)}
+\begin{itemize}
+    \item \texttt{T.root} = puntatore alla radice dell'albero.
+    \item \texttt{x.key} = chiave del nodo \texttt{x}.
+    \item \texttt{x.p} = puntatore al nodo padre.
+    \item \texttt{x.left} = puntatore al figlio sinistro.
+    \item \texttt{x.right} = puntatore al figlio destro.
+    \item \texttt{x.leftsize} = (opzionale) dimensione del sottoalbero sinistro del nodo.
+\end{itemize}
+
+% TODO aggiungi gli Algoritmi di attraversamento
+% TODO aggiungi i Dynamic set operations
+
+\subsubsection{Alberi di Ricerca Generici (GST)}
+\begin{itemize}
+    \item \texttt{T.root} = puntatore alla radice dell'albero.
+    \item \texttt{x.key} = chiave del nodo \texttt{x}.
+    \item \texttt{x.p} = puntatore al nodo padre.
+    \item \texttt{x.fs} = puntatore al figlio più a sinistra (first son).
+    \item \texttt{x.lb} = puntatore al fratello a sinistra (left brother).
+    \item \texttt{x.rb} = puntatore al fratello a destra (right brother).
+\end{itemize}
+
+\end{document}
