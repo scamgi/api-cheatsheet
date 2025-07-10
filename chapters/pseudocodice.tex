@@ -1,0 +1,69 @@
+\subsection{Sintassi di base}
+
+\begin{itemize}
+    \item La struttura a blocchi è data dall'indentazione.
+    \item \textbf{Riga di commento}
+    \begin{lstlisting}
+//...
+    \end{lstlisting}
+    \item \textbf{Assegnamento}
+    \begin{lstlisting}
+i := j
+    \end{lstlisting}
+    (assegnamento multiplo \( a := b := c \) è come \( b := c \) seguito da \( a := b \))
+    \item \textbf{Operazioni}
+    \begin{lstlisting}
++, -, *, /, %
+    \end{lstlisting}
+    \item \textbf{Confronto di interi}
+    \begin{lstlisting}
+>, <, >=, <=, =, !=
+    \end{lstlisting}
+    \item \textbf{Lettura dell'input}
+    \begin{lstlisting}
+x := read()
+    \end{lstlisting}
+    \item \textbf{Restituzione in output}
+    \begin{lstlisting}
+return x
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Istruzioni comuni}
+
+\begin{itemize}
+    \item \textbf{If-else}
+    \begin{lstlisting}
+if condizione
+    istruzioni
+else
+    istruzioni
+    \end{lstlisting}
+    \item \textbf{Cicli}
+    \begin{lstlisting}
+while condizione
+    istruzioni
+
+for i := n_1 to n_2
+    istruzioni
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Oggetti e variabili}
+
+\begin{itemize}
+    \item I dati composti sono organizzati come oggetti. Gli oggetti hanno attributi (campi):
+    \begin{itemize}
+        \item \texttt{x.attr} è il valore dell'attributo \texttt{attr} dell'oggetto \texttt{x}.
+    \end{itemize}
+    \item Gli array sono oggetti, dotati dell'attributo \texttt{length}.
+    \begin{itemize}
+        \item \(A[j]\) è l'elemento di indice \(j\) dell'array A.
+        \item \(A[i..j]\) è il sottoarray di A dall'i-esimo al j-esimo elemento.
+    \end{itemize}
+    \item Una variabile che corrisponde ad un oggetto è un puntatore all'oggetto.
+    \begin{itemize}
+        \item Dopo le istruzioni \( y := x, x.attr := 3 \) si ha \( y.attr = x.attr = 3 \).
+    \end{itemize}
+    \item Un puntatore che non fa riferimento ad alcun oggetto ha valore NIL.
+\end{itemize}
