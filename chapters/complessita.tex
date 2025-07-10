@@ -45,6 +45,29 @@ $$ \Theta(1) < \Theta((\log n)^{k}) < \Theta(n^{h}) < \Theta(a^{n}) < \Theta(n!)
     \end{itemize}
 \end{itemize}
 
+\subsection*{Complessità delle RAM}
+
+\subsubsection*{Criteri di Costo}
+\begin{itemize}
+    \item \textbf{Costo Costante:} Ogni istruzione ha costo 1. Ogni cella di memoria ha costo 1, indipendentemente dal valore contenuto.
+    \item \textbf{Costo Logaritmico:} Il costo di un'operazione e dello spazio occupato dipende dalla dimensione (logaritmo) dei valori numerici coinvolti.
+    \item \textbf{Quando sceglierli:} I due criteri sono equivalenti se la dimensione degli operandi è limitata da una costante. Se i numeri possono diventare arbitrariamente grandi, il criterio logaritmico è più realistico.
+\end{itemize}
+
+\subsubsection*{Calcolo del Costo Logaritmico (caso semplificato)}
+Sotto l'ipotesi di usare un numero costante di celle di memoria:
+\begin{itemize}
+    \item \textbf{Gestione di un intero i} (es. \texttt{LOAD, STORE, READ, WRITE, JZ})
+    \begin{itemize}
+        \item Costo Temporale: $\Theta(\log i)$
+    \end{itemize}
+    \item \textbf{Operazioni Aritmetiche} (su operandi $n_1, n_2$)
+    \begin{itemize}
+        \item Addizione (+), Sottrazione (-): $\Theta(\log n_1 + \log n_2)$
+        \item Moltiplicazione (*), Divisione (/): $\Theta(\log n_1 \cdot \log n_2)$
+    \end{itemize}
+\end{itemize}
+
 \subsection*{Classi di Complessità Comuni}
 \begin{itemize}
     \item $\mathcal{O}(1)$: Costante (es. accesso a un elemento di un array)
