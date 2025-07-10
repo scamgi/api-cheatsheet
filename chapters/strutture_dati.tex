@@ -44,3 +44,10 @@
     \item La lista è "circolare": la \texttt{prev} della testa e la \texttt{next} della coda puntano a \texttt{L.nil}.
     \item Se la lista è vuota, \texttt{L.nil} punta a se stesso.
 \end{itemize}
+
+\subsection{Tabelle Hash}
+\begin{itemize}
+    \item \texttt{T} = array di \texttt{m} celle (slot) che memorizza i dati.
+    \item \texttt{h(k)} = funzione hash che mappa una chiave \texttt{k} a un indice della tabella.
+    \item \texttt{$\alpha=n/m$} = fattore di carico, definito come rapporto tra elementi e slot.
+\end{itemize}
