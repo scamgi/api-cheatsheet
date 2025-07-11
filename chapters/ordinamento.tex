@@ -17,3 +17,29 @@
         \hline
     \end{tabular}
 \end{center}
+
+\subsection{Come Riconoscere la Complessità Logaritmica}
+
+Un algoritmo ha complessità logaritmica quando il problema si riduce in modo esponenziale a ogni passo. I principali indizi nel codice sono:
+
+\begin{itemize}
+    \item \textbf{La variabile del ciclo moltiplica o divide.}
+        \begin{itemize}
+            \item L'aggiornamento non è un'addizione/sottrazione (es. \texttt{i := i + 1}).
+            \item L'aggiornamento è una moltiplicazione o divisione per una costante $c > 1$ (es. \texttt{i := i * 2} oppure \texttt{i := i / 2}).
+            \item La variabile "salta" verso il valore finale, invece di "camminare". Questo richiede $\Theta(\log n)$ passi.
+        \end{itemize}
+    
+    \item \textbf{Lo spazio del problema viene ridotto di una frazione costante.}
+        \begin{itemize}
+            \item L'algoritmo scarta una porzione significativa dei dati a ogni iterazione (es. metà, un terzo, etc.).
+            \item L'esempio classico è la Ricerca Binaria, che dimezza lo spazio di ricerca a ogni passo.
+            \item La ricorrenza associata è spesso nella forma $T(n) = T(n/b) + O(1)$, la cui soluzione è $\Theta(\log n)$.
+        \end{itemize}
+
+    \item \textbf{Caso speciale ($\log \log n$): la variabile esegue un "super-salto".}
+        \begin{itemize}
+            \item La variabile di controllo viene elevata a una potenza, tipicamente al quadrato (es. \texttt{i := i * i}).
+            \item La crescita è doppiamente esponenziale, portando a una complessità ancora minore di $\Theta(\log \log n)$.
+        \end{itemize}
+\end{itemize}
