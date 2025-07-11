@@ -1,2 +1,24 @@
 % TODO per ogni struttura dati, devo creare una tabella dove metto la complessità per l'operazione.
 % Per esempio, metto operazioni come "insert", "delete", "access" ecc.
+
+\subsubsection{Complessità Liste Concatenate}
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+ & \shortstack{Unsorted, \\ Singly linked} & \shortstack{Sorted, \\ Singly linked} & \shortstack{Unsorted, \\ Doubly linked} & \shortstack{Sorted, \\ Doubly linked} \\
+\hline
+SEARCH (L,k) & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ \\
+\hline
+INSERT (L,x) & $\Theta(1)$ & $\Theta(n)$ & $\Theta(1)$ & $\Theta(n)$ \\
+\hline
+DELETE (L,x) & $\Theta(n)$ & $\Theta(n)$ & $\Theta(1)$ & $\Theta(1)$ \\
+\hline
+SUCCESSOR (L,x) & $\Theta(n)$ & $\Theta(1)$ & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+PREDECESSOR (L,x) & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+MAXIMUM (L) & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ \\
+\hline
+MINIMUM (L) & $\Theta(n)$ & $\Theta(1)$ & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+\end{tabular}
