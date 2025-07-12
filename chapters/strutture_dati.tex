@@ -49,7 +49,18 @@
 \begin{itemize}
     \item \texttt{T} = array di \texttt{m} celle (slot) che memorizza i dati.
     \item \texttt{h(k)} = funzione hash che mappa una chiave \texttt{k} a un indice della tabella.
-    \item \texttt{$\alpha=n/m$} = fattore di carico, definito come rapporto tra elementi e slot.
+    \item $\alpha = n/m$ = fattore di carico, definito come rapporto tra elementi e slot.
+\end{itemize}
+
+\subsubsection{Scelta della dimensione m}
+\begin{itemize}
+    \item Per il \textbf{metodo della divisione} ($h(k) = k \pmod{m}$): scegliere \texttt{m} come un \textbf{numero primo} non troppo vicino a una potenza di 2.
+    \item Per l'\textbf{indirizzamento aperto} ($h(k, i) = (h_1(k) + i \cdot h_2(k)) \pmod{m}$): se $h_2(k)$ è sempre dispari, scegliere \texttt{m} come una \textbf{potenza di 2}.
+\end{itemize}
+
+\subsubsection{Complessità (Hashing Uniforme)}
+\begin{itemize}
+    \item Numero medio di tentativi per accesso (indirizzamento aperto): $\frac{1}{\alpha} \ln\frac{1}{1-\alpha}$
 \end{itemize}
 
 % TODO inserisci qui l'indirizzamento aperto con ispezione lineare, indirizzamento aperto con double hashing, concatenamento, indirizzamento aperto con ispezione quadratica.
