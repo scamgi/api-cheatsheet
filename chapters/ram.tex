@@ -18,7 +18,7 @@
 \subsubsection{Calcolo del Costo Logaritmico (caso semplificato)}
 Sotto l'ipotesi di usare un numero costante di celle di memoria:
 \begin{itemize}
-    \item \textbf{Costo Spaziale:} Lo spazio totale è la somma della "lunghezza" (logaritmo) di tutti i numeri più grandi salvati in ogni cella di memoria utilizzata.
+    \item \textbf{Costo Spaziale:} Lo spazio totale è la somma della "lunghezza" (logaritmo) di tutti i numeri più grandi salvati in ogni cella di memoria utilizzata. E' sempre $\Theta(\log i)$, dove $i$ è il numero che viene calcolato in quell'istante.
     \item \textbf{Gestione di un intero i} (es. \texttt{LOAD, STORE, READ, WRITE, JZ})
     \begin{itemize}
         \item Costo Temporale: $\Theta(\log i)$
@@ -30,3 +30,4 @@ Sotto l'ipotesi di usare un numero costante di celle di memoria:
     \end{itemize}
 \end{itemize}
 
+Come si calcola in generale il costo temporale in caso di costo algoritmico? In generale si prende l'operazione nell'utlimo istante, che può essere magari una somma o una moltiplicazione, e con una sommatoria si somma tutto. Usi l'approssimazione di Stirling per calcolare la complessità.
