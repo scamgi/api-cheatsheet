@@ -26,3 +26,13 @@
 \end{itemize}
 
 \textbf{TIP}: per il calcolo della complessità spaziale, ricordati di considerare il caso peggiore. Il caso peggiore può anche essere per una stringa che non viene accettata, ovvero $x \notin L$.
+
+\subsection{Contatori (Implementati su DTM)}
+\begin{itemize}
+    \item \textbf{Complessità Spaziale}: per contare fino a $m$, sono necessari $\Theta(\log m)$ simboli. Se $m$ dipende dalla lunghezza dell'input $n$, la complessità spaziale diventa $S_M(n) = \Theta(\log n)$.
+    \item \textbf{Complessità Temporale} (per eseguire $n$ incrementi/decrementi):
+    \begin{itemize}
+        \item $T(n) = \Theta(n)$: se ad ogni modifica vengono visitate solo le cifre necessarie (userai questo in sede d'esame).
+        \item $T(n) = \Theta(n \log n)$: se ad ogni modifica si visitano tutte le cifre del contatore.
+    \end{itemize}
+\end{itemize}
