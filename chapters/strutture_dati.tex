@@ -58,12 +58,22 @@
     \item Per l'\textbf{indirizzamento aperto} ($h(k, i) = (h_1(k) + i \cdot h_2(k)) \pmod{m}$): se $h_2(k)$ è sempre dispari, scegliere \texttt{m} come una \textbf{potenza di 2}.
 \end{itemize}
 
+\subsubsection{Risoluzione delle Collisioni}
+\begin{itemize}
+    \item \textbf{Concatenamento (Chaining)}: Ogni cella della tabella \texttt{T[j]} punta a una lista concatenata di tutti gli elementi la cui chiave ha valore hash \texttt{j}. Le operazioni di inserimento, cancellazione e ricerca operano sulla lista corrispondente.
+    \item \textbf{Indirizzamento Aperto (Open Addressing)}: Tutti gli elementi sono memorizzati nella tabella stessa. Per inserire un elemento, si esamina (ispeziona) una sequenza di slot fino a trovarne uno vuoto.
+    \begin{itemize}
+        \item \textbf{Ispezione Lineare}: La sequenza di ispezione è data da $h(k, i) = (h'(k) + i) \pmod{m}$ per $i = 0, 1, \dots, m-1$.
+        \item \textbf{Ispezione Quadratica}: La sequenza di ispezione è data da $h(k, i) = (h'(k) + c_1i + c_2i^2) \pmod{m}$ per $i = 0, 1, \dots, m-1$, con $c_1, c_2$ costanti ausiliarie.
+        \item \textbf{Double Hashing}: La sequenza di ispezione è data da $h(k, i) = (h_1(k) + i \cdot h_2(k)) \pmod{m}$ per $i = 0, 1, \dots, m-1$, dove $h_1$ e $h_2$ sono funzioni hash ausiliarie.
+    \end{itemize}
+\end{itemize}
+
 \subsubsection{Complessità (Hashing Uniforme)}
 \begin{itemize}
     \item Numero medio di tentativi per accesso (indirizzamento aperto): $\frac{1}{\alpha} \ln\frac{1}{1-\alpha}$
+    \item Valore atteso del numero di collisioni (concatenamento): $E[Y] = \frac{n(n-1)}{2m}$
 \end{itemize}
-
-% TODO inserisci qui l'indirizzamento aperto con ispezione lineare, indirizzamento aperto con double hashing, concatenamento, indirizzamento aperto con ispezione quadratica.
 
 \subsection{Alberi}
 
@@ -76,9 +86,6 @@
     \item \texttt{x.right} = puntatore al figlio destro.
     \item \texttt{x.leftsize} = (opzionale) dimensione del sottoalbero sinistro del nodo.
 \end{itemize}
-
-% TODO aggiungi gli Algoritmi di attraversamento
-% TODO aggiungi i Dynamic set operations
 
 \subsubsection{Alberi di Ricerca Generici (GST)}
 \begin{itemize}
