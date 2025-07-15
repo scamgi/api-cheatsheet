@@ -14,14 +14,15 @@
 
     \item \textbf{k-DTM (Macchina di Turing Deterministica a k-nastri)}
     \begin{itemize}
-        \item Complessità Temporale: Nessun limite generale.
+        \item Complessità Temporale: Nessun limite generale. Per calcolarla devi immaginare il funzionamento della macchina.
         \item Complessità Spaziale: $\Theta(S_M(n)) \le \Theta(T_M(n))$
     \end{itemize}
 
     \item \textbf{SDTM (Macchina di Turing Deterministica a nastro singolo)}
     \begin{itemize}
-        \item Complessità Temporale: Nessun limite generale.
-        \item Complessità Spaziale: $S_M(n) = \Omega(n)$
+        \item Complessità Temporale: Nessun limite generale. Per calcolarla devi immaginare il funzionamento della macchina.
+        \item Complessità Spaziale: $S_M(n) = \Omega(n)$, ciò significa che la complessità spaziale dev'essere almeno lineare, questo perché il nastro di input coincide con il nastro di memoria.
     \end{itemize}
 \end{itemize}
 
+\textbf{TIP}: per il calcolo della complessità spaziale, ricordati di considerare il caso peggiore. Il caso peggiore può anche essere per una stringa che non viene accettata, ovvero $x \notin L$.
