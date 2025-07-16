@@ -101,3 +101,28 @@ PREDECESSOR (T, x) & $\Theta(h)$ \\
 
 \vspace{2mm}
 \footnotesize{La complessità delle operazioni su un Albero Binario di Ricerca (BST) dipende dall'altezza $h$ dell'albero. Nel caso peggiore (albero sbilanciato, simile a una catena lineare), $h = \Theta(n)$. Se l'albero è bilanciato, $h = \Theta(\log n)$.}
+
+\subsubsection{Complessità Alberi Rosso-Neri (RBT)}
+
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Operazione} & \textbf{Complessità} \\
+\hline
+SEARCH (T, k) & $\Theta(\log n)$ \\
+\hline
+INSERT (T, z) & $\Theta(\log n)$ \\
+\hline
+DELETE (T, z) & $\Theta(\log n)$ \\
+\hline
+MINIMUM (T) & $\Theta(\log n)$ \\
+\hline
+MAXIMUM (T) & $\Theta(\log n)$ \\
+\hline
+SUCCESSOR (T, x) & $\Theta(\log n)$ \\
+\hline
+PREDECESSOR (T, x) & $\Theta(\log n)$ \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+\footnotesize{Le operazioni su un Albero Rosso-Nero (RBT) hanno una complessità logaritmica nel caso peggiore. Questo perché un RBT è un albero binario di ricerca autobilanciante, che garantisce che la sua altezza $h$ sia sempre $h = \Theta(\log n)$, dove $n$ è il numero di nodi interni. Le operazioni di inserimento e cancellazione mantengono le proprietà rosso-nere attraverso delle rotazioni, assicurando che l'albero rimanga bilanciato.}
