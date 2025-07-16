@@ -59,3 +59,20 @@ MAXIMUM (L) & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ \\
 MINIMUM (L) & $\Theta(n)$ & $\Theta(1)$ & $\Theta(n)$ & $\Theta(1)$ \\
 \hline
 \end{tabular}
+
+\subsubsection{Complessità Tabelle Hash}
+
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Operazione} & \textbf{Complessità (caso medio)} \\
+\hline
+SEARCH (T, k) & $\Theta(1+\alpha)$ \\
+\hline
+INSERT (T, x) & $\Theta(1+\alpha)$ \\
+\hline
+DELETE (T, x) & $\Theta(1+\alpha)$ \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+\footnotesize{La complessità media delle operazioni in una tabella hash dipende dal fattore di carico $\alpha = n/m$ (elementi/slot). I valori indicati si riferiscono a una tabella con risoluzione delle collisioni tramite concatenamento. Per l'inserimento e la cancellazione in liste non ordinate, la complessità può essere $\Theta(1)$. Nel caso peggiore, tutte le operazioni possono degradare a $\Theta(n)$.}
