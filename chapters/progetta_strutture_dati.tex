@@ -1,5 +1,42 @@
-% TODO per ogni struttura dati, devo creare una tabella dove metto la complessità per l'operazione.
-% Per esempio, metto operazioni come "insert", "delete", "access" ecc.
+\subsubsection{Complessità Vettori (Array)}
+
+\begin{tabular}{|l|c|c|}
+\hline
+ & \shortstack{Non Ordinato} & \shortstack{Ordinato} \\
+\hline
+SEARCH (A, x) & $\Theta(n)$ & $\Theta(\log n)$ \\
+\hline
+INSERT (A, x) & $\Theta(1)^{*}$ & $\Theta(n)$ \\
+\hline
+DELETE (A, x) & $\Theta(n)$ & $\Theta(n)$ \\
+\hline
+SUCCESSOR (A, x) & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+PREDECESSOR (A, x) & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+MINIMUM (A) & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+MAXIMUM (A) & $\Theta(n)$ & $\Theta(1)$ \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+\footnotesize{* L'inserimento in un vettore non ordinato ha complessità $\Theta(1)$ solo se avviene in coda (append). Se l'inserimento avviene in una posizione specifica, la complessità è $\Theta(n)$ a causa della necessità di spostare gli elementi successivi.}
+
+\subsubsection{Complessità Matrici}
+
+\begin{tabular}{|l|c|c|}
+\hline
+ & \shortstack{Non Ordinata} & \shortstack{Ordinata$^{**}$} \\
+\hline
+SEARCH (M, x) & $\Theta(n \cdot m)$ & $\Theta(n+m)$ \\
+\hline
+ACCESS (M, i, j) & $\Theta(1)$ & $\Theta(1)$ \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+\footnotesize{** Per matrice ordinata si intende una matrice $n \times m$ in cui gli elementi sono in ordine crescente lungo ogni riga e lungo ogni colonna. L'algoritmo di ricerca con complessità $\Theta(n+m)$ parte da un angolo (es. in alto a destra) e ad ogni passo elimina una riga o una colonna. Questo approccio è valido anche per matrici con ordinamento misto (crescente sulle righe, decrescente sulle colonne).}
 
 \subsubsection{Complessità Liste Concatenate}
 
