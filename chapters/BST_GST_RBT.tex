@@ -48,6 +48,16 @@ Le operazioni su insiemi dinamici per un BST hanno una complessità temporale pr
     \item \textbf{Ricerca (Search)}, complessità: $\Theta(h)$
     \begin{itemize}
         \item \textbf{Descrizione:} L'algoritmo `BST-SEARCH(T, k)` cerca un nodo con chiave `k`. Partendo dalla radice, confronta `k` con la chiave del nodo corrente. Se `k` è minore, prosegue nel sottoalbero sinistro; se è maggiore, prosegue in quello destro, fino a trovare il nodo o un puntatore `NIL`.
+        \item \textbf{Pseudocodice:}
+        \begin{verbatim}
+BST-SEARCH(x,k):
+  if x = NIL or x.key = k
+    return x
+  if x.key > k
+    return BST-SEARCH(x.left,k)
+  else 
+    return BST-SEARCH(x.right,k)
+        \end{verbatim}
         \item \textbf{Esempio:} La ricerca di 65 (`BST-SEARCH(T, 65)`) esamina la sequenza di nodi: 50, 70, 60, e infine 65.
     \end{itemize}
 
@@ -60,20 +70,76 @@ Le operazioni su insiemi dinamici per un BST hanno una complessità temporale pr
     \item \textbf{Successore (Successor)}, complessità: $\Theta(h)$
     \begin{itemize}
         \item \textbf{Descrizione:} `BST-SUCCESSOR(x)` trova il nodo con la chiave più piccola che sia maggiore della chiave del nodo `x`. Se il nodo `x` ha un sottoalbero destro, il successore è il minimo di tale sottoalbero. Altrimenti, è il più basso antenato di `x` di cui `x` è discendente nel sottoalbero sinistro.
+        \item \textbf{Pseudocodice:}
+        \begin{verbatim}
+BST-SUCCESSOR(x):
+  if x.right != NIL
+    return BST-MINIMUM(x.right)
+  y := x.p
+  while y != NIL and x = y.right
+    x := y
+    y := y.p
+  return y
+        \end{verbatim}
         \item \textbf{Esempio:} Il successore del nodo con chiave 40 è il nodo con chiave 50.
     \end{itemize}
 
     \item \textbf{Inserimento (Insert)}, complessità: $\Theta(h)$
     \begin{itemize}
         \item \textbf{Descrizione:} `BST-INSERT(T, z)` inserisce un nuovo nodo `z` mantenendo la proprietà del BST. L'algoritmo cerca la posizione corretta come in `BST-SEARCH` e, una volta trovato un puntatore `NIL`, inserisce `z` come nuova foglia in quella posizione.
+        \item \textbf{Pseudocodice:}
+        \begin{verbatim}
+BST-INSERT(T,z):
+  y := NIL
+  x := T.root
+  while x != NIL
+    y := x
+    if z.key < x.key
+      x := x.left
+    else 
+      x := x.right
+  z.p := y
+  if y = NIL
+    T.root := z
+  else if z.key < y.key
+    y.left := z
+  else 
+    y.right := z
+        \end{verbatim}
         \item \textbf{Esempio:} Per inserire un nodo con chiave 31, l'algoritmo lo posiziona come figlio sinistro del nodo con chiave 32.
     \end{itemize}
 
     \item \textbf{Cancellazione (Delete)}, complessità: $\Theta(h)$
     \begin{itemize}
         \item \textbf{Descrizione:} `BST-DELETE(T, z)` rimuove il nodo `z`. L'operazione considera tre casi: se `z` è una foglia, viene rimosso; se ha un solo figlio, viene sostituito da esso; se ha due figli, la sua chiave viene sostituita da quella del suo successore, e il nodo successore viene rimosso (quest'ultimo ricade in uno dei primi due casi).
+        \item \textbf{Pseudocodice:}
+        \begin{verbatim}
+BST-DELETE(T,z):
+  if z.left = NIL or z.right = NIL
+    y := z
+  else 
+    y := BST-SUCCESSOR(z)
+  
+  if y.left != NIL
+    x := y.left
+  else 
+    x := y.right
+
+  if x != NIL
+    x.p := y.p
+
+  if y.p = NIL
+    T.root := x
+  else if y = y.p.left
+    y.p.left := x
+  else 
+    y.p.right := x
+
+  if y != z
+    z.key := y.key
+    
+  return y
+        \end{verbatim}
         \item \textbf{Esempio:} Per cancellare il nodo con chiave 70 (che ha due figli), la sua chiave viene sostituita da quella del suo successore (75). Il nodo originale contenente 75 viene poi rimosso dalla sua posizione.
     \end{itemize}
 \end{itemize}
-
-% TODO: QUI ricordati di inserire gli algoritmi dei vari alberi, giusto per averli come referenza.
