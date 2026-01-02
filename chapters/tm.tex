@@ -38,3 +38,35 @@
 \end{itemize}
 
 \textbf{NOTA BENE}: In una k-DTM il controllo tra due contatori è di complessità temporale: $\Theta(\log(n))$
+
+\subsection{Gestione Input Separati ($x\$y$)}
+Quando l'input contiene un separatore (es. $x\$y$), la strategia ottimale e la complessità dipendono drasticamente dal numero di nastri disponibili.
+
+\begin{itemize}
+    \item \textbf{k-nastri (Strategia dei Nastri Multipli - $\Theta(n)$)}
+    \begin{itemize}
+        \item \textbf{Idea:} Copiare le parti su nastri diversi per elaborarle in parallelo.
+        \item \textbf{Procedimento:}
+        \begin{enumerate}
+            \item Leggi $x$ e copialo sul \textit{Nastro 1}.
+            \item Ignora il separatore \$.
+            \item Leggi $y$ e copialo sul \textit{Nastro 2}.
+            \item Riavvolgi le testine e processa $x$ e $y$ contemporaneamente.
+        \end{enumerate}
+        \item \textbf{Vantaggio:} Evita il movimento a "zig-zag" (ping-pong) della testina, riducendo la complessità da quadratica a lineare.
+    \end{itemize}
+
+    \item \textbf{Nastro singolo (Strategia a Zig-Zag - $\Theta(n^2)$)}
+    \begin{itemize}
+        \item \textbf{Idea:} Utilizzare la tecnica della \textbf{marcatura}.
+        \item \textbf{Procedimento:}
+        \begin{enumerate}
+            \item Leggi un carattere di $x$, memorizzalo nello stato interno e \textit{marcalo} (es. sovrascrivilo con un simbolo speciale).
+            \item Scorri verso destra superando il separatore \$.
+            \item Trova il carattere corrispondente in $y$, processalo e marcalo.
+            \item Torna indietro (a sinistra) fino al primo carattere non marcato di $x$.
+            \item Ripeti finché l'input non è consumato.
+        \end{enumerate}
+        \item \textbf{Svantaggio:} Richiede continui attraversamenti del nastro per ogni carattere processato (avanti e indietro).
+    \end{itemize}
+\end{itemize}
